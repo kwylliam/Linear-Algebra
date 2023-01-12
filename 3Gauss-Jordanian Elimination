@@ -1,0 +1,65 @@
+#Algorithm 
+#check if arr1[0]=1
+#if not divide all elements of arr1 by arr1[0]
+#check if arr2[0]=0 if not subtract each element from each element in arr1*arr2[0]
+#check if arr3[0]= 0 
+#if not subtract each element from arr3[0]*arr[1]
+#check if arr2[1]=1
+#if not divide the elements of arr[2] by arr2[1]
+#check if arr3[1]=0
+#if not subtract arr3 elements by arr3[1]*arr2
+#check if arr3[2]=1
+#If not divide arrr3 by arr3[2]
+#check if arr2[2]=0
+#if not subtract arr2 from arr3*arr2[2]
+#check if arr1[1&2] are zero
+#if not subtract arr2*arr1[1] and arr3*arr[1]3
+#print the array
+import numpy as np 
+
+i1=(input("enter the first row"))
+
+i2=(input("Enter the second row"))
+
+i3=(input ("Enter the third row"))
+
+i4=input("Enter answer row")
+
+
+
+a1=i1.split(",")
+a2=i2.split(",")
+a3=i3.split(",")
+ans=i4.split(",")
+
+for n in range(0,3):
+    a1[n]=int(a1[n])
+    a2[n]=int(a2[n])
+    a3[n]=int(a3[n])
+    ans[n]=int(ans[n])
+
+
+
+print(a1, a2, a3) 
+
+if a1[0]!=1:
+    i=a1[0]
+    for n in a1:
+        n=(n/i)
+if a2[0]!=0:
+    i=a2[0]
+    for n in range(0,3):
+        a2[n]=a2[n]-(i*a1[n])
+if a3[0]!=0:
+    i=a3[0]
+    for n in range(0,3):
+        a3[n]=a3[n]-(i*a1[n])
+if a2[1]!=1:
+    i=a2[1]
+    for n in a2:
+        n=n/i
+
+
+    
+
+

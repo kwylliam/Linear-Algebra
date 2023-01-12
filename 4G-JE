@@ -1,0 +1,156 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct 12 17:07:42 2020
+
+@author: wyll
+"""
+
+import numpy as np 
+
+i1=(input("enter the first row"))
+
+i2=(input("Enter the second row"))
+
+i3=(input ("Enter the third row"))
+
+i4=(input("Enter the fourth row"))
+
+
+a1=i1.split(",")
+a2=i2.split(",")
+a3=i3.split(",")
+a4=i4.split(",")
+
+
+for n in range(0,len(a1)):
+    a1[n]=float(a1[n])
+    a2[n]=float(a2[n])
+    a3[n]=float(a3[n])
+    a4[n]=float(a4[n])
+
+
+
+print(a1, a2, a3,a4) 
+if a1[0]==0:
+    if a2[0]==0:
+        if a3[0]==0:
+            if a4[0]!=[0]:
+                a5=a1
+                a1=a4
+                a4=a5
+            else:
+                print("You may have a zero problem")
+                exit
+        else:
+            a5=a1
+            a1=a3
+            a3=a5
+    else:
+        a5=a1
+        a1=a2
+        a2=a5
+if a1[0]!=1:
+    i=a1[0]
+    for n in range(0,len(a1)):
+        a1[n]=(a1[n]/i)
+print("a1=",a1)
+if a2[0]!=0:
+    i=a2[0]
+    for n in range(0,len(a2)):
+        a2[n]=a2[n]-(i*a1[n])
+print("a2=",a2)
+if a3[0]!=0:
+    i=a3[0]
+    for n in range(0,len(a3)):
+        a3[n]=a3[n]-(i*a1[n])
+print("a3=", a3)
+
+if a4[0]!=0:
+    i=a4[0]
+    for n in range(0,len(a4)):
+        a4[n]=a4[n]-(i*a1[n])
+if a2[1]==0:
+    if a3[1]==0:
+        if a4[1]!=0:
+            a5=a2
+            a2=a4
+            a4=a5
+        else:
+            print("You may have a zero problem")
+            exit
+    else:
+        a5=a2
+        a2=a3
+        a3=a5
+if a2[1]!=1:
+    i=a2[1]
+    for n in range(0,len(a2)):
+        a2[n]=(a2[n]/i)
+print("a2=",a2)
+if a3[1]!=0:
+    i=a3[1]
+    for n in range(0,len(a3)):
+        a3[n]=a3[n]-(i*a2[n])
+print("a3=", a2)
+
+if a4[1]!=0:
+    i=a4[1]
+    for n in range(0,len(a4)):
+        a4[n]=a4[n]-(i*a2[n])
+if a3[2]==0:
+    if a4[2]!=0:
+        a5=a3
+        a3=a4
+        a4=a5
+    else:
+        print(a1,a2,a3, a4)
+        print ("Program terminated because you may have a free variable and this is how far it got.")
+        exit
+if a3[2]!=1:
+    i=a3[2]
+    for n in range(0,len(a3)):
+        a3[n]=(a3[n]/i)
+print("a3=",a3)
+if a4[2]!=0:
+    i=a4[2]
+    for n in range(0,len(a4)):
+        a4[n]=a4[n]-(i*a3[n])
+if a2[2]!=0:
+    i=a2[2]
+    for n in range(0,len(a2)):
+        a2[n]=a2[n]-(i*a3[n])
+print("a2=", a2)
+if a4[3]==0:
+    print (a1,a2,a3,a4)
+    print ("this set equations may not have a solution")
+    exit
+if a4[3]!=1:
+    i=a4[3]
+    for n in range(0,len(a4)):
+        a4[n]=a4[n]/i
+if a3[3]!=0:
+    i=a3[3]
+    for n in range(0,len(a3)):
+        a3[n]=a3[n]-(i*a4[n])
+if a2[3] !=0:
+    i=a2[3]
+    for n in range(0,len(a2)):
+        a2[n]=a2[n]-(i*a4[n])
+if a1[1]!=0:
+    i=a1[1]
+    for n in range(0,len(a1)):
+        a1[n]=a1[n]-(i*a2[n])
+print("a1=",a1)
+if a1[2]!=0:
+    i=a1[2]
+    for n in range(0,len(a1)):
+        a1[n]=a1[n]-(i*a3[n])
+if a1[3] !=0:
+    i=a1[3]
+    for n in range(0,len(a1)):
+        a1[n]=a1[n]-(i*a4[n])
+print("a1=",a1)
+
+arr=np.array([a1,a2,a3,a4])
+print(arr)
